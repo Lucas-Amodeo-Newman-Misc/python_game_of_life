@@ -1,15 +1,7 @@
 import random
-# import sys
-
 
 size = 20
 
-grid = [[0 for i in range(size)] for i in range(size)]
-
-# for i in range(size):
-# 	for j in range(size):
-# 		print grid[i][j]
-	
 def initialize():
 	grid = [[0 for i in range(size)] for i in range(size)]
 	for i in range(size):
@@ -18,14 +10,8 @@ def initialize():
 	return grid			
 	
 def sum_neighbors(index, grid):
-	
-	
 	a, b = index
 	total = 0
-	
-# 	print '************'
-# 	print a, b 
-# 	print '***'
 	
 	for i in range(max(0, a-1), min(a+2, size)):
 		for j in range(max(0, b-1), min(b+2, size)):
@@ -75,15 +61,6 @@ def print_grid(grid):
 		else:
 			graphic.append(' ')
 	
-# 	
-# 	print """
-# 	%s|%s|%s|%s|%s
-# 	%s|%s|%s|%s|%s
-# 	%s|%s|%s|%s|%s
-# 	%s|%s|%s|%s|%s
-# 	%s|%s|%s|%s|%s
-# 	""" % tuple(grid_list)
-	
 	
 	print	"""
 	%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s
@@ -114,7 +91,6 @@ grid = initialize()
 
 blah = 0
 while blah != 'p':
-	# sys.stderr.write("\x1b[2J\x1b[H")
 	print_grid(grid)
 	grid = update(grid)
 	blah = raw_input()
